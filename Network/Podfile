@@ -1,0 +1,7 @@
+platform :ios, '8.0'
+ use_frameworks!
+
+target 'Network' do
+    pod 'Alamofire', '~> 4.5.0'
+    pod 'HandyJSON', '~> 1.7.2'
+end
