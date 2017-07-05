@@ -10,9 +10,16 @@ import Foundation
 
 
 class HTMLModel: BaseModel {
+    
+    /// model id
     let id: String = ""
+    
+    /// 用户id
     let userId: String = ""
+    
+    /// 
     let title: String = ""
+    
     let body: String = ""
     
 }

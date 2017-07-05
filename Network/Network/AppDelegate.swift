@@ -8,7 +8,6 @@
 
 import UIKit
 
-let URL: String = "http://jsonplaceholder.typicode.com/posts"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

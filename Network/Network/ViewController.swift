@@ -23,15 +23,21 @@ class ViewController: UITableViewController {
 
 
 extension ViewController{
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            let vc: AlamofireViewController = AlamofireViewController();
-            self.navigationController?.pushViewController(vc, animated: true)
+        var vc: UIViewController = UIViewController()
+        switch indexPath.row {
+        case 0:
+            vc = AlamofireViewController()
+        case 1:
+            vc = ProtocolViewController()
+        case 2:
+            vc = MoyaViewController()
+        case 3:
+            vc = RxSwiftViewController()
+        default: break
         }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
