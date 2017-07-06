@@ -12,7 +12,6 @@ import Moya
 
 class RxSwiftViewModel {
     
-    
     private let provider = RxMoyaProvider<RxRequestAPI>()
     
     func getPosts() -> Observable<[RxHTMLModel]> {

@@ -14,7 +14,6 @@
 		971ADD881F0BA19E00EB72EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 971ADD861F0BA19E00EB72EE /* LaunchScreen.storyboard */; };
 		971ADD931F0BA19E00EB72EE /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971ADD921F0BA19E00EB72EE /* NetworkTests.swift */; };
 		9733DF751F0BA5290035695D /* AlamofireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9733DF721F0BA5290035695D /* AlamofireViewController.swift */; };
-		9733DF771F0BA6F10035695D /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9733DF761F0BA6F10035695D /* BaseModel.swift */; };
 		9733DF791F0BA7170035695D /* HTMLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9733DF781F0BA7170035695D /* HTMLModel.swift */; };
 		9733DF7B1F0BA7720035695D /* HTMLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9733DF7A1F0BA7720035695D /* HTMLViewModel.swift */; };
 		97A74BE21F0C6E030055C3C0 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A74BE11F0C6E030055C3C0 /* Macro.swift */; };
@@ -32,6 +31,10 @@
 		97AB2DAA1F0CF2B20086A853 /* RxSwiftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AB2DA91F0CF2B20086A853 /* RxSwiftViewModel.swift */; };
 		97AB2DAC1F0CF3090086A853 /* Observable+HandyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AB2DAB1F0CF3090086A853 /* Observable+HandyJSON.swift */; };
 		97AB2DB01F0CF6D90086A853 /* RxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AB2DAF1F0CF6D90086A853 /* RxSwiftViewController.swift */; };
+		97DB97801F0DCDD100828161 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB977F1F0DCDD100828161 /* BaseModel.swift */; };
+		97DB97821F0DCDE800828161 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DB97811F0DCDE800828161 /* BaseTableViewController.swift */; };
+		97E7EE591F0DDE2A0093D10F /* HDHTMLDisplayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E7EE581F0DDE2A0093D10F /* HDHTMLDisplayTableViewCell.swift */; };
+		97E7EE5B1F0DDE8F0093D10F /* HDHTMLDisplayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97E7EE5A1F0DDE8F0093D10F /* HDHTMLDisplayTableViewCell.xib */; };
 		E5557F9D0C0EC0D6A31AB553 /* Pods_Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC55CD853A43592179380E0 /* Pods_Network.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +61,6 @@
 		971ADD921F0BA19E00EB72EE /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		971ADD941F0BA19E00EB72EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9733DF721F0BA5290035695D /* AlamofireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireViewController.swift; sourceTree = "<group>"; };
-		9733DF761F0BA6F10035695D /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		9733DF781F0BA7170035695D /* HTMLModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLModel.swift; sourceTree = "<group>"; };
 		9733DF7A1F0BA7720035695D /* HTMLViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLViewModel.swift; sourceTree = "<group>"; };
 		97A74BE11F0C6E030055C3C0 /* Macro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
@@ -76,6 +78,10 @@
 		97AB2DA91F0CF2B20086A853 /* RxSwiftViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwiftViewModel.swift; sourceTree = "<group>"; };
 		97AB2DAB1F0CF3090086A853 /* Observable+HandyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+HandyJSON.swift"; sourceTree = "<group>"; };
 		97AB2DAF1F0CF6D90086A853 /* RxSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSwiftViewController.swift; sourceTree = "<group>"; };
+		97DB977F1F0DCDD100828161 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		97DB97811F0DCDE800828161 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		97E7EE581F0DDE2A0093D10F /* HDHTMLDisplayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDHTMLDisplayTableViewCell.swift; sourceTree = "<group>"; };
+		97E7EE5A1F0DDE8F0093D10F /* HDHTMLDisplayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDHTMLDisplayTableViewCell.xib; sourceTree = "<group>"; };
 		AFC55CD853A43592179380E0 /* Pods_Network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB7C3EE5EA55886ED1153BCB /* Pods-Network.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Network.release.xcconfig"; path = "Pods/Target Support Files/Pods-Network/Pods-Network.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +128,7 @@
 		971ADD7C1F0BA19E00EB72EE /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				97DB977E1F0DCDB700828161 /* Base */,
 				97AB2DA01F0CF0FB0086A853 /* Moya+HandyJSON+RxSwift */,
 				97A74BF21F0C8F750055C3C0 /* Moya+HandyJSON */,
 				97A74BE31F0C72DA0055C3C0 /* 面向Protocol */,
@@ -160,7 +167,6 @@
 		9733DF701F0BA5290035695D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9733DF761F0BA6F10035695D /* BaseModel.swift */,
 				9733DF781F0BA7170035695D /* HTMLModel.swift */,
 			);
 			path = Models;
@@ -185,6 +191,8 @@
 		9733DF741F0BA5290035695D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				97E7EE581F0DDE2A0093D10F /* HDHTMLDisplayTableViewCell.swift */,
+				97E7EE5A1F0DDE8F0093D10F /* HDHTMLDisplayTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -320,6 +328,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		97DB977E1F0DCDB700828161 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				97DB977F1F0DCDD100828161 /* BaseModel.swift */,
+				97DB97811F0DCDE800828161 /* BaseTableViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		D168754E82757DA717471F5E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				971ADD881F0BA19E00EB72EE /* LaunchScreen.storyboard in Resources */,
+				97E7EE5B1F0DDE8F0093D10F /* HDHTMLDisplayTableViewCell.xib in Resources */,
 				971ADD851F0BA19E00EB72EE /* Assets.xcassets in Resources */,
 				971ADD831F0BA19E00EB72EE /* Main.storyboard in Resources */,
 			);
@@ -495,6 +513,7 @@
 			files = (
 				97AB2D9B1F0CBA350086A853 /* MoyaRequestAPI.swift in Sources */,
 				97A74BEB1F0C73CD0055C3C0 /* RequestProtocol.swift in Sources */,
+				97DB97801F0DCDD100828161 /* BaseModel.swift in Sources */,
 				971ADD801F0BA19E00EB72EE /* ViewController.swift in Sources */,
 				97A74BE91F0C73740055C3C0 /* ProtocolModel.swift in Sources */,
 				97AB2DAA1F0CF2B20086A853 /* RxSwiftViewModel.swift in Sources */,
@@ -505,10 +524,11 @@
 				9733DF7B1F0BA7720035695D /* HTMLViewModel.swift in Sources */,
 				97AB2D9D1F0CBA480086A853 /* MoyaViewController.swift in Sources */,
 				9733DF751F0BA5290035695D /* AlamofireViewController.swift in Sources */,
+				97DB97821F0DCDE800828161 /* BaseTableViewController.swift in Sources */,
+				97E7EE591F0DDE2A0093D10F /* HDHTMLDisplayTableViewCell.swift in Sources */,
 				9733DF791F0BA7170035695D /* HTMLModel.swift in Sources */,
 				97AB2D9F1F0CBA960086A853 /* MoyaRequest.swift in Sources */,
 				97A74BEF1F0C77E00055C3C0 /* RequestManager.swift in Sources */,
-				9733DF771F0BA6F10035695D /* BaseModel.swift in Sources */,
 				97AB2DA81F0CF23D0086A853 /* RxRequestAPI.swift in Sources */,
 				97A74BED1F0C75FD0055C3C0 /* HTMLRequest.swift in Sources */,
 				971ADD7E1F0BA19E00EB72EE /* AppDelegate.swift in Sources */,

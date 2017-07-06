@@ -8,22 +8,13 @@
 
 import UIKit
 import HandyJSON
-class MoyaViewController: UIViewController {
+class MoyaViewController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "使用Moya+HandyJSON"
-        self.view.backgroundColor = UIColor.white
-        
-        let moyaRequest: MoyaRequest = MoyaRequest()
-        moyaRequest.getList(success: { (array) in
-            if array != nil {
-                print("array count:\(array?.count)")
-            }
-        }) { (error) in
-            print("error")
-        }
+
         
         // Do any additional setup after loading the view.
     }
@@ -31,6 +22,22 @@ class MoyaViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func getData() {
+        
+        let moyaRequest: MoyaRequest = MoyaRequest()
+        moyaRequest.getList(success: { (array) in
+            if array != nil {
+                self.dataArray = array as! NSArray?
+                self.tableView.reloadData()
+                print("array count:\(array?.count)")
+            }
+            
+        }) { (error) in
+            print("error")
+        }
+
     }
     
 
