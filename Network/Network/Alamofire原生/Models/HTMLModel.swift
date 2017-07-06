@@ -7,19 +7,31 @@
 //
 
 import Foundation
+import HandyJSON
 
-
-class HTMLModel: BaseModel {
+class HTMLModel: HandyJSON {
     
     /// model id
     let id: String = ""
     
     /// 用户id
-    let userId: String = ""
+    var userID: String = ""
     
     /// 
     let title: String = ""
     
     let body: String = ""
+    
+    required init() {
+        
+    }
+    
+    
+    func mapping(mapper: HelpingMapper) {
+        mapper.specify(property: &userID, name: "userId")
+//        or
+//        mapper <<<
+//            self.userID <-- "userId"
+    }
     
 }

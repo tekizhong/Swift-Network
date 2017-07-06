@@ -6,5 +6,4 @@ target 'Network' do
     pod 'HandyJSON', '~> 1.7.2'
     pod 'Moya/RxSwift', '~> 8.0.5'
     pod 'RxSwift', '~> 3.5.0'
-    pod 'RxCocoa', '~> 3.0.1'
 end

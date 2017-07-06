@@ -43,7 +43,6 @@ class AlamofireViewController: BaseTableViewController {
         
         viewModel.getModel(id: "1") { (model) in
             if let model = model as? HTMLModel {
-                
                 print("model:\(model.id) body:\(model.body)")
             }
         }
