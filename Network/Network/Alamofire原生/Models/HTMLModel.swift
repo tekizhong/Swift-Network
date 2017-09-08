@@ -29,6 +29,8 @@ class HTMLModel: HandyJSON {
     
     func mapping(mapper: HelpingMapper) {
         mapper.specify(property: &userID, name: "userId")
+        
+        
 //        or
 //        mapper <<<
 //            self.userID <-- "userId"

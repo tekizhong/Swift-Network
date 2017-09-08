@@ -31,6 +31,8 @@ class AlamofireViewController: BaseTableViewController {
                 self.dataArray = array as NSArray?
                 self.tableView.reloadData()
                 
+                
+                
 //                array.forEach({ (model) in
 //                    print("id:\(model.id),body:\(model.body)")
 //                })
