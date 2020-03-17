@@ -11,7 +11,7 @@ import Foundation
 import Alamofire
 import HandyJSON
 
-typealias HDResult = Result<Any>
+typealias HDResult = Result<Any,AFError>
 
 typealias completionHander = (_ model: AnyObject) -> ()
 
@@ -24,12 +24,18 @@ class HTMLViewModel: NSObject {
     ///
     /// - Parameter finished: 返回的回调
     func getList(_ finished: @escaping completionList) {
-        Alamofire.request(HDBaseURL).responseJSON{ (response) in
-            if let array = response.result.value as? [[String: Any]] {
-                let result = JSONDeserializer<HTMLModel>.deserializeModelArrayFrom(array: array as NSArray?)
-                finished(result as! Array)
-            }
-            else{
+        
+        AF.request(HDBaseURL).responseJSON(){ (response) in
+            
+            switch response.result {
+            case .success(let value):
+                if let array = value as? [[String: Any]]  {
+                 let result = JSONDeserializer<HTMLModel>.deserializeModelArrayFrom(array: array as NSArray?)
+                 finished(result as! Array)
+                }else {
+                    finished([])
+                }
+            case .failure(_):
                 finished([])
             }
         }
@@ -42,14 +48,37 @@ class HTMLViewModel: NSObject {
     ///   - id: 获取model 的id
     ///   - finished: 回调
     func getModel(id: String, finished: @escaping completionHander) {
-        Alamofire.request(HDBaseURL + "/" + id).responseJSON { (response) in
-            if let dict = response.result.value as? [String: Any] {
-                let result = JSONDeserializer<HTMLModel>.deserializeFrom(dict:  dict as NSDictionary?)
-                finished(result!)
+        
+        AF.request(HDBaseURL).responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+                if let dict = value as? [String: Any] {
+                    let result = JSONDeserializer<TKChannels>.deserializeFrom(dict:  dict as NSDictionary?)
+                    finished(result!)
+                }
+            case .failure(_):
+                if let res = response.response {
+                    finished(res)
+                }else {
+                    finished("服务器无响应" as AnyObject)
+                }
+                
             }
-            else{
-                finished(response.response!)
-            }
+            
         }
+        
+//        AF.request(HDBaseURL + "/" + id).responseJSON { (response) in
+//            if case let .success(value) = response.result,
+//                let dict = value as? [String: Any] {
+//                let result = JSONDeserializer<TKChannels>.deserializeFrom(dict:  dict as NSDictionary?)
+//                finished(result!)
+//            }else{
+//                if let res = response.response {
+//                    finished(res)
+//                }else {
+//                    finished("服务器无响应" as AnyObject)
+//                }
+//            }
+//        }
     }
 }

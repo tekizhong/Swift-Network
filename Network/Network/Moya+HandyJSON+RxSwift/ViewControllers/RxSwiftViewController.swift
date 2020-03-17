@@ -29,19 +29,19 @@ class RxSwiftViewController: BaseTableViewController {
     
 
     override func getData() {
-        viewModel.getPosts().subscribe(onNext: { (models: [RxHTMLModel]) in
-            print("count:\(models.count)")
-            self.dataArray = models as NSArray
-            self.tableView.reloadData()
-        }).addDisposableTo(disposeBag)
-        
-        
-        viewModel.createPost(title: "Title 1", body: "Body 1", userId: 1)
-            .subscribe(onNext: { (model: RxHTMLModel) in
-                //do something with post
-                print(model.title)
-            })
-            .addDisposableTo(disposeBag)
+//        viewModel.getPosts().subscribe(onNext: { (models: [RxHTMLModel]) in
+//            print("count:\(models.count)")
+//            self.dataArray = models as NSArray
+//            self.tableView.reloadData()
+//        }).addDisposableTo(disposeBag)
+//        
+//        
+//        viewModel.createPost(title: "Title 1", body: "Body 1", userId: 1)
+//            .subscribe(onNext: { (model: RxHTMLModel) in
+//                //do something with post
+//                print(model.title)
+//            })
+//            .addDisposableTo(disposeBag)
     }
 
 }

@@ -14,6 +14,10 @@ class AlamofireViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        let param: [String: Any] = ["name_en":"Personal Radio","seq_id":0,"abbr_en":"My","name":"私人兆赫","channel_id":0]
+        let model = TKMusicModel.deserialize(from: param)
+        
         title = "使用Alamofire原生请求"
         // Do any additional setup after loading the view.
     }
@@ -44,8 +48,10 @@ class AlamofireViewController: BaseTableViewController {
         
         
         viewModel.getModel(id: "1") { (model) in
-            if let model = model as? HTMLModel {
-                print("model:\(model.id) body:\(model.body)")
+            if let model = model as? TKChannels {
+                self.dataArray = model.channels as? NSArray
+                self.tableView.reloadData()
+
             }
         }
     }

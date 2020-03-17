@@ -32,13 +32,13 @@ class HDHTMLDisplayTableViewCell: UITableViewCell {
     }
     
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        self.contentView.setNeedsLayout()
-        self.contentView.layoutIfNeeded()
-        ////对于单行label，这个属性不用设置；对于多行label，则需要设置最大autolayout宽度，如果文本超出这个属性指定的宽度，则会自动换行
-        self.titleLabel.preferredMaxLayoutWidth = self.bounds.width - 30
-        self.bodyLabel.preferredMaxLayoutWidth = self.bounds.width - 30
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//
+//        self.contentView.setNeedsLayout()
+//        self.contentView.layoutIfNeeded()
+//        ////对于单行label，这个属性不用设置；对于多行label，则需要设置最大autolayout宽度，如果文本超出这个属性指定的宽度，则会自动换行
+//        self.titleLabel.preferredMaxLayoutWidth = self.bounds.width - 30
+//        self.bodyLabel.preferredMaxLayoutWidth = self.bounds.width - 30
+//    }
 }

@@ -9,6 +9,8 @@
 import Foundation
 import Alamofire
 
-let HDBaseURL: String = "http://jsonplaceholder.typicode.com/posts/"
+//let HDBaseURL: String = "http://jsonplaceholder.typicode.com/posts/"
+
+let HDBaseURL: String = "https://www.douban.com/j/app/radio/channels"
 
 

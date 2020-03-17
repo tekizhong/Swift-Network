@@ -9,6 +9,22 @@
 import Foundation
 import HandyJSON
 
+class TKMusicModel: HandyJSON {
+    var name_en: String?
+    var seq_id: String?
+    var abbr_en: String?
+    var name: String?
+    var channel_id: String?
+    
+    required init() {}
+}
+
+class TKChannels: HandyJSON {
+    var channels: Array<TKMusicModel>?
+    required init() {}
+}
+
+
 class HTMLModel: HandyJSON {
     
     /// model id

@@ -47,19 +47,27 @@ class RequestManager: HDClient {
 
     internal func sendGetWithResponseModel<T : RequestProtocol, R : HandyJSON>(_ r: T, responseType: R.Type, handler: @escaping (R?) -> Void) {
         let url = host.appending(r.path)
-        Alamofire.request(url).responseJSON { (response) in
-            if response.result.value != nil {
-                if let dict = response.result.value as? NSDictionary {
-                    let res = JSONDeserializer<R>.deserializeFrom(dict: dict  as NSDictionary?)!
-                    DispatchQueue.main.async { handler(res) }
-                }
-                    
-                else {
-                    DispatchQueue.main.async { handler(nil)}
-                }
-            }else{
+        AF.request(url).responseJSON { (response) in
+            if case let .success(value) = response.result,
+                let dict = value as? NSDictionary {
+                let res = JSONDeserializer<R>.deserializeFrom(dict: dict  as NSDictionary?)!
+                DispatchQueue.main.async { handler(res) }
+            }else {
                 DispatchQueue.main.async { handler(nil)}
             }
+                
+//            if response.result.value != nil {
+//                if let dict = response.result.value as? NSDictionary {
+//                    let res = JSONDeserializer<R>.deserializeFrom(dict: dict  as NSDictionary?)!
+//                    DispatchQueue.main.async { handler(res) }
+//                }
+//                    
+//                else {
+//                    DispatchQueue.main.async { handler(nil)}
+//                }
+//            }else{
+//                DispatchQueue.main.async { handler(nil)}
+//            }
         }
     }
 
@@ -67,42 +75,69 @@ class RequestManager: HDClient {
     
     func sendGetWithResponseList<T: RequestProtocol,R: HandyJSON>(_ r: T, responseType: R.Type,handler: @escaping ([R]?) -> Void) {
         let url = host.appending(r.path)
-        Alamofire.request(url).responseJSON { (response) in
-            if response.result.value != nil {
-                if let array = response.result.value as? NSArray {
-                    let res = JSONDeserializer<R>.deserializeModelArrayFrom(array: array as NSArray)!
-                    DispatchQueue.main.async { handler(res as? [R]) }
-                }
-                    
-                else {
-                    DispatchQueue.main.async { handler(nil)}
-                }
-            }else{
+        
+        
+        AF.request(url).responseJSON { (response) in
+            if case let .success(value) = response.result,
+                let array = value as? NSArray {
+                let res = JSONDeserializer<R>.deserializeModelArrayFrom(array: array as NSArray)!
+                DispatchQueue.main.async { handler(res as? [R]) }
+            }else {
                 DispatchQueue.main.async { handler(nil)}
             }
+            
+//            if response.result.value != nil {
+//                if let array = response.result.value as? NSArray {
+//                    let res = JSONDeserializer<R>.deserializeModelArrayFrom(array: array as NSArray)!
+//                    DispatchQueue.main.async { handler(res as? [R]) }
+//                }
+//
+//                else {
+//                    DispatchQueue.main.async { handler(nil)}
+//                }
+//            }else{
+//                DispatchQueue.main.async { handler(nil)}
+//            }
         }
     }
     
     
     func sendGetWithResponse<T: RequestProtocol,R: HandyJSON>(_ r: T, responseType: R.Type,handler: @escaping (AnyObject?) -> Void) {
         let url = host.appending(r.path)
-        Alamofire.request(url).responseJSON { (response) in
+        AF.request(url).responseJSON { (response) in
             
-            if response.result.value != nil {
-                if let dict = response.result.value as? NSDictionary {
+            if case let .success(value) = response.result {
+                
+                if let dict = value as? NSDictionary {
                     let res = JSONDeserializer<R>.deserializeFrom(dict: dict  as NSDictionary?)!
                     DispatchQueue.main.async { handler(res as AnyObject?) }
                 }
-                else if (response.result.value as? NSArray) != nil {
-                    let res = JSONDeserializer<R>.deserializeModelArrayFrom(array: response.result.value as? NSArray)!
+                else if (value as? NSArray) != nil {
+                    let res = JSONDeserializer<R>.deserializeModelArrayFrom(array: value as? NSArray)!
                     DispatchQueue.main.async { handler(res as AnyObject?) }
                 }
                 else {
                     DispatchQueue.main.async { handler(nil)}
                 }
-            }else{
+            }else {
                 DispatchQueue.main.async { handler(nil)}
+
             }
+//            if response.result.value != nil {
+//                if let dict = response.result.value as? NSDictionary {
+//                    let res = JSONDeserializer<R>.deserializeFrom(dict: dict  as NSDictionary?)!
+//                    DispatchQueue.main.async { handler(res as AnyObject?) }
+//                }
+//                else if (response.result.value as? NSArray) != nil {
+//                    let res = JSONDeserializer<R>.deserializeModelArrayFrom(array: response.result.value as? NSArray)!
+//                    DispatchQueue.main.async { handler(res as AnyObject?) }
+//                }
+//                else {
+//                    DispatchQueue.main.async { handler(nil)}
+//                }
+//            }else{
+//                DispatchQueue.main.async { handler(nil)}
+//            }
         }
     }
     

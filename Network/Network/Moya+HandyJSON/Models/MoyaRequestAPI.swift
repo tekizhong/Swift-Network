@@ -15,6 +15,10 @@ enum MoyaRequestAPI {
 }
 
 extension MoyaRequestAPI: TargetType {
+    var headers: [String : String]? {
+        return [:]
+    }
+    
 
     var baseURL: URL {
         return URL(string: HDBaseURL)!
@@ -64,6 +68,6 @@ extension MoyaRequestAPI: TargetType {
 
     
     var task: Task {
-        return .request
+        return .requestPlain
     }
 }

@@ -12,20 +12,20 @@ import Moya
 
 class RxSwiftViewModel {
     
-    private let provider = RxMoyaProvider<RxRequestAPI>()
+//    private let provider = MoyaProvider<RxRequestAPI>()
     
-    func getPosts() -> Observable<[RxHTMLModel]> {
-        return provider.request(.Show)
-            .filterSuccessfulStatusCodes()
-            .mapJSON()
-            .mapArray(type: RxHTMLModel.self)
-    }
-    
-    
-    
-    func createPost(title: String, body: String, userId: Int) -> Observable<RxHTMLModel> {
-        return provider.request(.Create(title: title, body: body, userId: userId))
-            .mapJSON()
-            .mapObject(type: RxHTMLModel.self)
-    }
+//    func getPosts() -> Observable<[RxHTMLModel]> {
+//        return provider.request(.Show)
+//            .filterSuccessfulStatusCodes()
+//            .mapJSON()
+//            .mapArray(type: RxHTMLModel.self)
+//    }
+//
+//
+//
+//    func createPost(title: String, body: String, userId: Int) -> Observable<RxHTMLModel> {
+//        return provider.request(.Create(title: title, body: body, userId: userId))
+//            .mapJSON()
+//            .mapObject(type: RxHTMLModel.self)
+//    }
 }
