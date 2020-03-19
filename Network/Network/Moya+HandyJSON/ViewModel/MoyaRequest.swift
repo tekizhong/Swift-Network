@@ -13,7 +13,7 @@ import HandyJSON
 class MoyaRequest: NSObject {
     private let provider = MoyaProvider<MoyaRequestAPI>()
     
-    func getList(success: @escaping (AnyObject?) ->(),
+    func getListModel(success: @escaping (AnyObject?) ->(),
         failure:@escaping (AnyObject?) ->()) {
         provider.request(MoyaRequestAPI.Show) { (result) in
             switch result {
@@ -23,8 +23,8 @@ class MoyaRequest: NSObject {
                     let data =  moyaResponse.data
                     let statusCode =  moyaResponse.statusCode
                     print("\(data) --- \(statusCode) ----- \(any)")
-                    let array = JSONDeserializer<MoyaHTMLModel>.deserializeModelArrayFrom(array: any as? NSArray)
-                    success(array as AnyObject?)
+                    let model = JSONDeserializer<MoyaHTMLModel>.deserializeFrom(dict: any as? NSDictionary)
+                    success(model as AnyObject?)
                 } catch {
                     
                 }

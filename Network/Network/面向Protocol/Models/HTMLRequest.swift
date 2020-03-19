@@ -33,10 +33,7 @@ extension HTMLReuqest: RequestProtocol {
         case .requestByID(_):
             return .post
         case .requestBy(_, _, _):
-            return .post
-        default:
-            return .get
-            
+            return .post            
         }
     }
     
@@ -48,8 +45,6 @@ extension HTMLReuqest: RequestProtocol {
             return ["id":id]
         case .requestBy(let id, let body, let title):
             return ["id":id, "body":body, "title":title]
-        default:
-            return nil
         }
     }
     

@@ -9,4 +9,4 @@
 
 import Foundation
 
-typealias MoyaHTMLModel = HTMLModel
+typealias MoyaHTMLModel = TKChannels

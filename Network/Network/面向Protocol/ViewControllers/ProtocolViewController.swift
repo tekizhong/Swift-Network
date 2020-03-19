@@ -28,38 +28,15 @@ class ProtocolViewController: BaseTableViewController {
         let request: RequestManager = RequestManager()
         
         
-        request.sendGetWithResponseList(HTMLReuqest.requestNone, responseType: HTMLModel.self) { (array) in
-            guard array != nil else {
+        request.sendGetWithResponseModel(HTMLReuqest.requestNone, responseType: TKChannels.self) { (model) in
+            guard model != nil else {
                 return
             }
-            self.dataArray = array as NSArray?
+            self.dataArray = model?.channels
             self.tableView.reloadData()
-            print("array count :\(array?.count)")
+            print("array count :\(model?.channels?.count ?? -1)")
         }
-        
-        
-//        request.sendGetWithResponseModel(HTMLReuqest.requestByID(id: "1"), responseType: HTMLModel.self) { (model) in
-//            guard let model = model else {
-//                return
-//            }
-//            print("model id:\(model.id), body:\(model.body)")
-//        }
-
-        
-        
-//        request.sendGetWithResponse(HTMLReuqest.requestByID(id: "1"), responseType: HTMLModel.self) { (response) in
-//            guard let response = response else {
-//                return
-//            }
-//            
-//            if let model = response as? HDHTMLModel {
-//                print("model id:\(model.id), body:\(model.body)")
-//            }
-//            
-//            if let array = response as? NSArray {
-//                print("array count :\(array.count)")
-//            }
-//        }
+    
 
     }
     

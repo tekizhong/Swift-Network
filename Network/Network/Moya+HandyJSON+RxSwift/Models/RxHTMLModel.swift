@@ -8,4 +8,4 @@
 
 import Foundation
 
-typealias RxHTMLModel = HTMLModel
+typealias RxHTMLModel = TKChannels

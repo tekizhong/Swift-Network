@@ -10,7 +10,7 @@ import UIKit
 
 class BaseTableViewController: UITableViewController{
 
-    var dataArray: NSArray?
+    var dataArray: Array<TKMusicModel>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,30 +47,12 @@ class BaseTableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HDHTMLDisplayTableViewCell = tableView.dequeueReusableCell(withIdentifier: HDHTMLDisplayTableViewCell.identifier, for: indexPath) as! HDHTMLDisplayTableViewCell
         let model = self.dataArray?[indexPath.row]
-        if let model = model as? TKMusicModel {
+        if let model = model {
             cell.titleLabel.text = model.name
-            cell.bodyLabel.text = model.name_en
-
-        }else if let model = model as? HTMLModel {
-            cell.titleLabel.text = model.title
-            cell.bodyLabel.text = model.body
+            cell.bodyLabel.text = "ChannelId:\(model.channelId ?? "")"
         }
         return cell
     }
-    
-    
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let hsCell = tableView.dequeueReusableCell(withIdentifier: HDHTMLDisplayTableViewCell.identifier) as? HDHTMLDisplayTableViewCell
-//        var tempCell: HDHTMLDisplayTableViewCell
-//        hsCell != nil ? (tempCell = hsCell!) : (tempCell = HDHTMLDisplayTableViewCell())
-//        let model: HTMLModel = self.dataArray![indexPath.row] as! HTMLModel
-//        tempCell.titleLabel.text = model.title
-//        tempCell.bodyLabel.text = model.body
-//        tempCell.frame = tableView.frame // 这句话不能少，因为在cell还没出现的时候是不知道frame的
-//        tempCell.layoutIfNeeded() //调用layoutsubviews
-//        
-//        return tempCell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height + 1
-//    }
 
 }
 

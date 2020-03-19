@@ -55,19 +55,6 @@ class RequestManager: HDClient {
             }else {
                 DispatchQueue.main.async { handler(nil)}
             }
-                
-//            if response.result.value != nil {
-//                if let dict = response.result.value as? NSDictionary {
-//                    let res = JSONDeserializer<R>.deserializeFrom(dict: dict  as NSDictionary?)!
-//                    DispatchQueue.main.async { handler(res) }
-//                }
-//                    
-//                else {
-//                    DispatchQueue.main.async { handler(nil)}
-//                }
-//            }else{
-//                DispatchQueue.main.async { handler(nil)}
-//            }
         }
     }
 
@@ -85,19 +72,6 @@ class RequestManager: HDClient {
             }else {
                 DispatchQueue.main.async { handler(nil)}
             }
-            
-//            if response.result.value != nil {
-//                if let array = response.result.value as? NSArray {
-//                    let res = JSONDeserializer<R>.deserializeModelArrayFrom(array: array as NSArray)!
-//                    DispatchQueue.main.async { handler(res as? [R]) }
-//                }
-//
-//                else {
-//                    DispatchQueue.main.async { handler(nil)}
-//                }
-//            }else{
-//                DispatchQueue.main.async { handler(nil)}
-//            }
         }
     }
     

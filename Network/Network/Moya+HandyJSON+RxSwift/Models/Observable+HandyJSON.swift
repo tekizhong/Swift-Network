@@ -11,8 +11,6 @@ import RxSwift
 import HandyJSON
 
 
-
-
 // MARK: - 类扩展
 extension Observable{
     /// 整个 Data Model
@@ -24,7 +22,7 @@ extension Observable{
                 throw HDSwiftMoyaError.ParseJSONError
             }
             
-            return JSONDeserializer<T>.deserializeFrom(dict: dict as NSDictionary?)!
+            return JSONDeserializer<T>.deserializeFrom(dict: dict)!
         }
     }
     
@@ -42,7 +40,7 @@ extension Observable{
                 throw HDSwiftMoyaError.ParseJSONError
             }
             
-            return JSONDeserializer<T>.deserializeModelArrayFrom(array: dicts as? NSArray)! as! [T]
+            return JSONDeserializer<T>.deserializeModelArrayFrom(array: dicts)! as! [T]
         }
     }
     

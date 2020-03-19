@@ -8,4 +8,4 @@
 
 import Foundation
 
-typealias HDHTMLModel = HTMLModel
+typealias HDHTMLModel = TKChannels

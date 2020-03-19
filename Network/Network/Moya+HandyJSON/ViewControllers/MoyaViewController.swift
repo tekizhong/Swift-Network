@@ -27,11 +27,11 @@ class MoyaViewController: BaseTableViewController {
     override func getData() {
         
         let moyaRequest: MoyaRequest = MoyaRequest()
-        moyaRequest.getList(success: { (array) in
-            if array != nil {
-                self.dataArray = array as! NSArray?
+        moyaRequest.getListModel(success: { (model) in
+            if let model = model as? TKChannels {
+                self.dataArray = model.channels
                 self.tableView.reloadData()
-                print("array count:\(array?.count)")
+                print("array count:\(model.channels?.count ?? -1)")
             }
             
         }) { (error) in

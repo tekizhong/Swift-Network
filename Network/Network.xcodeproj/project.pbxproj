@@ -15,6 +15,7 @@
 		9733DF751F0BA5290035695D /* AlamofireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9733DF721F0BA5290035695D /* AlamofireViewController.swift */; };
 		9733DF791F0BA7170035695D /* HTMLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9733DF781F0BA7170035695D /* HTMLModel.swift */; };
 		9733DF7B1F0BA7720035695D /* HTMLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9733DF7A1F0BA7720035695D /* HTMLViewModel.swift */; };
+		977942B82421A8680060EF67 /* channels.json in Resources */ = {isa = PBXBuildFile; fileRef = 977942B72421A8680060EF67 /* channels.json */; };
 		97A74BE21F0C6E030055C3C0 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A74BE11F0C6E030055C3C0 /* Macro.swift */; };
 		97A74BE91F0C73740055C3C0 /* ProtocolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A74BE81F0C73740055C3C0 /* ProtocolModel.swift */; };
 		97A74BEB1F0C73CD0055C3C0 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A74BEA1F0C73CD0055C3C0 /* RequestProtocol.swift */; };
@@ -51,6 +52,7 @@
 		9733DF721F0BA5290035695D /* AlamofireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireViewController.swift; sourceTree = "<group>"; };
 		9733DF781F0BA7170035695D /* HTMLModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLModel.swift; sourceTree = "<group>"; };
 		9733DF7A1F0BA7720035695D /* HTMLViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLViewModel.swift; sourceTree = "<group>"; };
+		977942B72421A8680060EF67 /* channels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = channels.json; sourceTree = "<group>"; };
 		97A74BE11F0C6E030055C3C0 /* Macro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
 		97A74BE81F0C73740055C3C0 /* ProtocolModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolModel.swift; sourceTree = "<group>"; };
 		97A74BEA1F0C73CD0055C3C0 /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		9733DF6F1F0BA5290035695D /* Alamofire原生 */ = {
 			isa = PBXGroup;
 			children = (
+				977942B72421A8680060EF67 /* channels.json */,
 				9733DF701F0BA5290035695D /* Models */,
 				9733DF711F0BA5290035695D /* ViewControllers */,
 				9733DF731F0BA5290035695D /* ViewModel */,
@@ -363,7 +366,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Evergrande Group";
 				TargetAttributes = {
 					971ADD791F0BA19E00EB72EE = {
@@ -376,10 +379,9 @@
 			};
 			buildConfigurationList = 971ADD751F0BA19E00EB72EE /* Build configuration list for PBXProject "Network" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -398,6 +400,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				977942B82421A8680060EF67 /* channels.json in Resources */,
 				971ADD881F0BA19E00EB72EE /* LaunchScreen.storyboard in Resources */,
 				97E7EE5B1F0DDE8F0093D10F /* HDHTMLDisplayTableViewCell.xib in Resources */,
 				971ADD851F0BA19E00EB72EE /* Assets.xcassets in Resources */,
@@ -509,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -559,6 +563,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -567,6 +572,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -609,6 +615,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

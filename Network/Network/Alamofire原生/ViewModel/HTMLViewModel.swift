@@ -15,41 +15,19 @@ typealias HDResult = Result<Any,AFError>
 
 typealias completionHander = (_ model: AnyObject) -> ()
 
-typealias completionList = (_ list: Array<HTMLModel>) -> ()
 
 class HTMLViewModel: NSObject {
-    
-    
-    /// 获取列表
-    ///
-    /// - Parameter finished: 返回的回调
-    func getList(_ finished: @escaping completionList) {
-        
-        AF.request(HDBaseURL).responseJSON(){ (response) in
-            
-            switch response.result {
-            case .success(let value):
-                if let array = value as? [[String: Any]]  {
-                 let result = JSONDeserializer<HTMLModel>.deserializeModelArrayFrom(array: array as NSArray?)
-                 finished(result as! Array)
-                }else {
-                    finished([])
-                }
-            case .failure(_):
-                finished([])
-            }
-        }
-    }
-    
-    
-    /// 获取某个id的model
+    /// 获取歌曲目录
     ///
     /// - Parameters:
-    ///   - id: 获取model 的id
+    ///
     ///   - finished: 回调
-    func getModel(id: String, finished: @escaping completionHander) {
+    func getModel(_ finished: @escaping completionHander) {
         
         AF.request(HDBaseURL).responseJSON { (response) in
+//            if #available(iOS 10.0,*) {
+//                print(response.metrics)
+//            }
             switch response.result {
             case .success(let value):
                 if let dict = value as? [String: Any] {
@@ -66,19 +44,5 @@ class HTMLViewModel: NSObject {
             }
             
         }
-        
-//        AF.request(HDBaseURL + "/" + id).responseJSON { (response) in
-//            if case let .success(value) = response.result,
-//                let dict = value as? [String: Any] {
-//                let result = JSONDeserializer<TKChannels>.deserializeFrom(dict:  dict as NSDictionary?)
-//                finished(result!)
-//            }else{
-//                if let res = response.response {
-//                    finished(res)
-//                }else {
-//                    finished("服务器无响应" as AnyObject)
-//                }
-//            }
-//        }
     }
 }
